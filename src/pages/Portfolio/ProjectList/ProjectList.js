@@ -7,6 +7,9 @@ import useWindowSize from "../../../hooks/useWindowResize"; // ✅ Hook inside t
 import ValentinePreview from "../../../assets/pngs/valentine-preview.png";
 import ValentineContent from "../../../assets/pngs/valentine-content.png";
 import ValentineDeskContent from "../../../assets/pngs/valentine-desk-content.png";
+import FinancePreview from "../../../assets/pngs/financeui-preview.png";
+import FinanceDeskCotent from "../../../assets/pngs/financeui-desk-content.png";
+import FinanceContent from "../../../assets/pngs/financeui-content.png";
 import EpPreview from "../../../assets/pngs/ep-preview.png";
 import EpDeskContent from "../../../assets/pngs/ep-desk-content.png";
 import EpContent from "../../../assets/pngs/ep-content.png";
@@ -44,12 +47,24 @@ const ProjectList = () => {
       image: ValentinePreview,
       date: "12 Feb 2025",
       title: "Valentine Hoodie Design",
-      desc: "A self-initiated design project created to celebrate Valentine's Day, reflecting my personal creativity and passion for design.",
+      desc: "A personal design project created to celebrate Valentine's Day, showcasing my creativity and passion for design.",
       content:
         width > 768 ? (
           <img src={ValentineDeskContent} className="content-img" />
         ) : (
           <img src={ValentineContent} className="content-img" />
+        ),
+    },
+    {
+      image: FinancePreview,
+      date: "27 Jan 2025",
+      title: "Payment UI Practice",
+      desc: "A payment UI design project aimed at enhancing and refining my UI.",
+      content:
+        width > 768 ? (
+          <img src={FinanceDeskCotent} className="content-img" />
+        ) : (
+          <img src={FinanceContent} className="content-img" />
         ),
     },
     {
@@ -79,7 +94,7 @@ const ProjectList = () => {
     {
       image: UiPreview,
       date: "1 Oct 2024",
-      title: "UI Screens",
+      title: "General UI Screens",
       desc: "UI screens that I designed with some help from a colleague for a single project, selected from many interfaces I created from scratch.",
       content:
         width > 768 ? (
