@@ -1,13 +1,5 @@
 import React, { useState } from "react";
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  Link,
-  Navigate,
-  useNavigate,
-  useLocation,
-} from "react-router-dom";
+import { Routes, Route, useNavigate, useLocation } from "react-router-dom";
 
 import useWindowSize from "../../hooks/useWindowResize";
 
@@ -26,7 +18,6 @@ import "./Home.scss";
 const Home = () => {
   const navigate = useNavigate();
   const location = useLocation();
-  const [activeSection, setActiveSection] = useState("home");
   const { width } = useWindowSize();
 
   const navigateTo = (section) => {
@@ -36,6 +27,10 @@ const Home = () => {
   const goBack = () => {
     navigate("/");
   };
+
+  // ✅ List of valid paths (prevents NotFound from showing incorrectly)
+  const validPaths = ["/", "/about", "/portfolio", "/contact"];
+  const isValidPath = validPaths.includes(location.pathname);
 
   return (
     <div className="home-main-container">
@@ -71,16 +66,18 @@ const Home = () => {
               )
             }
           />
-        ) : (
-          ""
-        )}
+        ) : null}
 
-        <Routes>
-          <Route path="/about" element={<About />} />
-          <Route path="/portfolio" element={<Portfolio />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
+        {/* ✅ Only show <Routes> if the path is valid */}
+        {isValidPath ? (
+          <Routes>
+            <Route path="/about" element={<About />} />
+            <Route path="/portfolio" element={<Portfolio />} />
+            <Route path="/contact" element={<Contact />} />
+          </Routes>
+        ) : (
+          <NotFound /> // ✅ Show NotFound only for wrong paths
+        )}
       </div>
     </div>
   );
