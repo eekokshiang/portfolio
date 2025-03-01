@@ -7,6 +7,9 @@ import useWindowSize from "../../../hooks/useWindowResize"; // ✅ Hook inside t
 import ValentinePreview from "../../../assets/pngs/valentine-preview.png";
 import ValentineContent from "../../../assets/pngs/valentine-content.png";
 import ValentineDeskContent from "../../../assets/pngs/valentine-desk-content.png";
+import EpPreview from "../../../assets/pngs/ep-preview.png";
+import EpDeskContent from "../../../assets/pngs/ep-desk-content.png";
+import EpContent from "../../../assets/pngs/ep-content.png";
 import UxCaseStudyPreview from "../../../assets/pngs/uxcasestudy-preview.png";
 import UxCaseStudyDeskContent from "../../../assets/pngs/uxcase-study-desk-content.png";
 import UxCaseStudyContent from "../../../assets/pngs/uxcase-study-content.png";
@@ -47,6 +50,18 @@ const ProjectList = () => {
           <img src={ValentineDeskContent} className="content-img" />
         ) : (
           <img src={ValentineContent} className="content-img" />
+        ),
+    },
+    {
+      image: EpPreview,
+      date: "8 Jan 2025",
+      title: "Enchancement UI Practice",
+      desc: "A self-initiated design project focused on revamping an old government website to improve its UI and enhance the overall design.",
+      content:
+        width > 768 ? (
+          <img src={EpDeskContent} className="content-img" />
+        ) : (
+          <img src={EpContent} className="content-img" />
         ),
     },
     {
@@ -136,7 +151,7 @@ const ProjectList = () => {
     {
       image: GoalPreview,
       date: "24 Jun 2018",
-      title: "Shopping Mall Event Visual Designer",
+      title: "Mall Event Visual Designer",
       desc: "During my student days, I designed a custom visual theme for a client, tailoring it to their specific needs.",
       content:
         width > 768 ? (
@@ -147,7 +162,7 @@ const ProjectList = () => {
     },
   ];
 
-  return projects; // ✅ Now returns projects without `map()`
+  return projects;
 };
 
 export default ProjectList;
