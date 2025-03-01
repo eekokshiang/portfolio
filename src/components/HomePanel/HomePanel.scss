@@ -1,0 +1,102 @@
+@import "../../assets/styles/variable.scss";
+
+.home-panel-main-container {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  gap: 24px;
+
+  width: 100%;
+
+  padding: 24px;
+
+  border: 1px solid $klein-blue;
+
+  cursor: pointer;
+  touch-action: manipulation;
+
+  transition: all 0.05s ease-in-out;
+
+  &:nth-of-type(2),
+  &:nth-of-type(3) {
+    border-left: none;
+  }
+
+  @media screen and (max-width: 430px) {
+    border-top: none;
+    border-left: 1px solid $klein-blue;
+
+    flex-direction: row;
+
+    &:nth-of-type(1) {
+      border-top: 1px solid $klein-blue;
+    }
+
+    &:nth-of-type(2),
+    &:nth-of-type(3) {
+      border-left: 1px solid $klein-blue;
+    }
+  }
+
+  .home-panel-top-content {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    @media screen and (max-width: 430px) {
+      gap: 4px;
+    }
+
+    p {
+      width: 100%;
+
+      font-size: 30px;
+      font-weight: 600;
+      text-align: left;
+
+      color: $klein-blue;
+
+      &:nth-of-type(2),
+      &:nth-of-type(3) {
+        color: $light-blue;
+      }
+
+      @media screen and (max-width: 430px) {
+        font-size: 22px;
+      }
+    }
+  }
+
+  .bottom-left-icon {
+    align-self: flex-end;
+
+    color: $black;
+
+    @media screen and (max-width: 430px) {
+      width: 80px;
+      height: auto;
+    }
+  }
+
+  // HOVERING ///////////////////////////////////////////////////////////////////////
+
+  @include hover-effect {
+    background-color: $klein-blue;
+
+    .panel-title-text {
+      color: $fluorescent-white;
+
+      &:nth-of-type(2),
+      &:nth-of-type(3) {
+        color: $light-klein-blue;
+      }
+    }
+
+    .bottom-left-icon {
+      color: $fluorescent-white;
+    }
+  }
+}

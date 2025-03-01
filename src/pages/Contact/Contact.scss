@@ -1,0 +1,167 @@
+@import "../../assets/styles/variable.scss";
+
+.contact-main-container {
+  position: relative;
+
+  margin-top: 80px;
+
+  @media screen and (max-width: 768px) {
+    margin-top: 20px;
+  }
+
+  .contact-main-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 120px;
+    color: $fluorescent-white;
+
+    font-weight: 700;
+
+    white-space: nowrap;
+
+    text-transform: uppercase;
+
+    margin-bottom: -30px;
+    margin-top: -40px;
+
+    z-index: -1;
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    @media screen and (max-width: 768px) {
+      font-size: 50px;
+      top: 8%;
+    }
+  }
+
+  .contact-main-wrapper {
+    width: 100%;
+    height: auto;
+
+    display: flex;
+
+    @media screen and (max-width: 768px) {
+      flex-direction: column;
+    }
+
+    .contact-wrapper {
+      width: 100%;
+      height: auto;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      font-size: 18px;
+      font-weight: 400;
+
+      overflow: hidden;
+      border: 1px $klein-blue solid;
+      background-color: $white;
+
+      @media screen and (max-width: 768px) {
+        height: 120px;
+
+        flex-direction: row;
+        justify-content: space-between;
+      }
+
+      &:nth-of-type(2),
+      &:nth-of-type(3) {
+        border-left: none;
+
+        @media screen and (max-width: 768px) {
+          border-left: 1px $klein-blue solid;
+          border-top: none;
+        }
+      }
+
+      .contact-content {
+        width: 100%;
+        height: 160px;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+
+        color: $fluorescent-white;
+        background-color: $white;
+
+        @media screen and (max-width: 768px) {
+          height: auto;
+          width: 100%;
+          align-items: flex-start;
+
+          padding-left: 24px;
+        }
+
+        .contact-title {
+          font-size: 12px;
+          font-weight: 700;
+          text-transform: uppercase;
+
+          color: $light-blue;
+        }
+
+        .contact-info {
+          font-size: 24px;
+          font-weight: 600;
+
+          color: $klein-blue;
+
+          @media screen and (max-width: 768px) {
+            font-size: 18px;
+          }
+        }
+      }
+
+      .copy-button {
+        width: 100%;
+        height: 80px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        font-weight: 500;
+
+        color: $klein-blue;
+        background-color: $fluorescent-white;
+
+        transition: all 0.1s ease-in-out;
+
+        cursor: pointer;
+
+        @media screen and (max-width: 768px) {
+          height: 100%;
+          width: 100%;
+
+          width: 120px;
+        }
+
+        @include hover-effect {
+          color: $white;
+          background-color: $klein-blue;
+
+          transition: all 0.1s ease-in-out;
+        }
+      }
+
+      .copy-alert {
+        @media screen and (max-width: 768px) {
+          white-space: nowrap;
+          transform: rotate(-90deg) !important;
+
+          font-size: 16px;
+        }
+      }
+    }
+  }
+}

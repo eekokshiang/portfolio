@@ -1,0 +1,35 @@
+// Primary Colors
+$black: #000000;
+$white: #ffffff;
+$gray-light: #dbdbdb;
+$gray-mid: #777777;
+$red: #dd3838;
+
+$fluorescent-white: #e5f9fd;
+$klein-blue: #002db2;
+$light-klein-blue: #3961da;
+$dark-blue: #213777;
+$light-blue: #c4cff1;
+
+// Global Mixin
+@mixin hover-effect {
+  @media (hover: hover) {
+    &:hover {
+      @content;
+    }
+  }
+
+  @media (hover: none) {
+    &:active {
+      @content;
+    }
+  }
+}
+
+@mixin active-effect {
+  @media (hover: none) {
+    &:active {
+      @content;
+    }
+  }
+}

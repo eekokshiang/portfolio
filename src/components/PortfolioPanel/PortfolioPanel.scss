@@ -1,0 +1,70 @@
+@import "../../assets//styles/variable.scss";
+
+.panel-main-container {
+  width: 100%;
+
+  cursor: pointer;
+
+  color: $klein-blue;
+  background-color: $white;
+
+  transition: all 0.1s ease-in-out;
+
+  @include hover-effect {
+    background-color: $klein-blue;
+    color: $fluorescent-white;
+
+    padding: 16px;
+
+    .panel-date {
+      color: $fluorescent-white;
+    }
+
+    .panel-desc {
+      color: $fluorescent-white;
+    }
+  }
+
+  img {
+    width: 100%;
+
+    border: 1px solid #002cb225;
+  }
+
+  .panel-date {
+    font-size: 15px;
+    font-weight: 500;
+
+    margin-top: 12px;
+
+    color: $light-klein-blue;
+  }
+
+  .panel-title {
+    font-size: 20px;
+    font-weight: 600;
+
+    margin-top: 12px;
+  }
+
+  .panel-desc {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 130%;
+
+    color: $light-klein-blue;
+
+    flex-grow: 1;
+
+    margin-top: 8px;
+  }
+}

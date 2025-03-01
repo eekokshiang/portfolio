@@ -1,0 +1,229 @@
+@import "../../assets/styles/variable.scss";
+
+.header-main-container {
+  width: calc(100% - 72px);
+  max-width: 1200px;
+  height: auto;
+  top: 100px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  position: absolute;
+
+  margin: auto;
+
+  z-index: 100;
+  pointer-events: none;
+
+  @media screen and (max-width: 768px) {
+    width: 100%;
+    top: 0;
+  }
+
+  .welcome-text-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @media screen and (max-width: 430px) {
+      flex-direction: column;
+      padding: 0;
+
+      gap: 0;
+    }
+
+    .welcome-text {
+      width: 70%;
+      padding: 16px 24px;
+
+      font-size: 16px;
+
+      color: $fluorescent-white;
+      background-color: $klein-blue;
+
+      text-transform: uppercase;
+      font-weight: 500;
+
+      @media screen and (max-width: 430px) {
+        width: 100%;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        font-size: 18px;
+      }
+    }
+
+    .hiring-text {
+      width: 30%;
+      min-width: 340px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      color: $klein-blue;
+      background-color: $fluorescent-white;
+
+      font-weight: 600;
+
+      padding: 16px 24px;
+
+      @media screen and (max-width: 430px) {
+        width: 100%;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        font-size: 15px;
+      }
+    }
+  }
+
+  .header-content-container {
+    width: 100%;
+    height: auto;
+
+    background-color: $white;
+
+    position: sticky;
+    top: 0;
+
+    @media screen and (max-width: 430px) {
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .header-home {
+      width: 100%;
+      height: 160px;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+
+      @media screen and (max-width: 768px) {
+        height: 120px;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+    }
+
+    .header-path {
+      width: 100%;
+      height: 100px;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      pointer-events: auto;
+
+      @media screen and (max-width: 768px) {
+        height: 60px;
+        padding: 0 16px;
+      }
+    }
+
+    .header-left-container {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+
+      @media screen and (max-width: 430px) {
+        gap: 8px;
+      }
+
+      .header-name {
+        font-size: 42px;
+        color: $klein-blue;
+
+        @media screen and (max-width: 430px) {
+          font-size: 32px;
+        }
+
+        span {
+          font-weight: 700;
+        }
+      }
+
+      .header-desc {
+        font-size: 18px;
+        font-weight: 500;
+        text-transform: uppercase;
+
+        color: $dark-blue;
+
+        @media screen and (max-width: 430px) {
+          font-size: 16px;
+        }
+      }
+    }
+
+    .header-right-container {
+      display: flex;
+      gap: 24px;
+
+      .header-social-icon {
+        width: 42px;
+        height: auto;
+
+        cursor: pointer;
+
+        color: $light-blue;
+
+        transition: all 0.3s ease-in-out;
+
+        @include hover-effect {
+          color: $klein-blue;
+          transition: all 0.2s ease-in-out;
+        }
+
+        @media screen and (max-width: 430px) {
+          width: 36px;
+          height: auto;
+        }
+      }
+    }
+
+    // Within Pages ///////////////////////////////////////////////////////////////////
+
+    .header-back-button {
+      width: 42px;
+      height: auto;
+
+      cursor: pointer;
+
+      color: $klein-blue;
+
+      transition: all 0.1s ease-in-out;
+
+      @media screen and (max-width: 768px) {
+        width: 32px;
+      }
+
+      @include hover-effect {
+        color: $fluorescent-white;
+
+        transition: all 0.1s ease-in-out;
+      }
+    }
+
+    .header-title {
+      font-size: 24px;
+      font-weight: 700;
+
+      color: $light-blue;
+
+      @media screen and (max-width: 768px) {
+        font-size: 20px;
+      }
+    }
+  }
+}

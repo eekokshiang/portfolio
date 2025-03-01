@@ -1,0 +1,395 @@
+@import "../../assets/styles/variable.scss";
+
+.about-main-container {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  .about-header-container {
+    width: 100%;
+    height: 220px;
+
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+
+    position: relative;
+
+    border-radius: 16px;
+
+    @media screen and (max-width: 768px) {
+      flex-direction: column;
+      height: auto;
+    }
+
+    .about-pfp-wrapper {
+      width: 20%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      @media screen and (max-width: 768px) {
+        width: 100%;
+      }
+
+      .pfp-image {
+        max-height: 220px;
+        object-position: center;
+
+        @media screen and (max-width: 768px) {
+          height: 160px;
+          width: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+
+    .header-content {
+      width: 100%;
+      height: 100%;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 12px;
+
+      padding: 30px;
+
+      @media screen and (max-width: 768px) {
+        padding: 20px;
+      }
+
+      background-color: $klein-blue;
+
+      .header-name {
+        font-size: 30px;
+        font-weight: 600;
+
+        color: $white;
+
+        @media screen and (max-width: 768px) {
+          font-size: 26px;
+        }
+      }
+
+      .header-desc {
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 130%;
+        font-style: italic;
+
+        color: $fluorescent-white;
+
+        @media screen and (max-width: 768px) {
+          font-size: 15px;
+        }
+      }
+    }
+  }
+
+  .about-title {
+    display: inline-block;
+    width: 100%;
+
+    font-size: 32px;
+    font-weight: 700;
+
+    color: $black;
+    border-bottom: $light-blue solid 1px;
+
+    padding-bottom: 20px;
+    margin-top: 80px;
+    margin-bottom: 30px;
+
+    @media screen and (max-width: 768px) {
+      margin-top: 60px;
+      font-size: 26px;
+    }
+  }
+
+  // ABOUT SECTION ////////////////////////////////////////////
+
+  .about-grid {
+    display: flex;
+    justify-content: space-between;
+
+    gap: 80px;
+
+    @media screen and (max-width: 768px) {
+      flex-direction: column;
+      gap: 60px;
+    }
+
+    .about-content-container {
+      width: 100%;
+
+      .exp-container {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+
+        //EXPERIENCE HEADER ////////////////////////////////////////////////
+        .exp-header {
+          display: flex;
+          align-items: center;
+          gap: 16px;
+
+          color: $klein-blue;
+
+          @media screen and (max-width: 768px) {
+            align-items: flex-end;
+          }
+
+          .nine-dots-icon {
+            height: 100%;
+
+            @media screen and (max-width: 768px) {
+              margin-bottom: 10px;
+            }
+          }
+
+          .exp-header-wrapper {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            @media screen and (max-width: 768px) {
+              flex-direction: column-reverse;
+              align-items: flex-start;
+              gap: 12px;
+            }
+
+            .exp-company {
+              display: flex;
+              flex-direction: column;
+              align-items: flex-start;
+              gap: 8px;
+
+              .exp-date {
+                font-size: 15px;
+                font-weight: 500;
+              }
+
+              .company-name {
+                font-size: 20px;
+                font-weight: 700;
+              }
+            }
+
+            .company-tag {
+              font-size: 15px;
+              font-weight: 500;
+
+              color: $fluorescent-white;
+              background-color: $klein-blue;
+
+              padding: 10px 12px;
+            }
+          }
+        }
+
+        //EXPERIENCE BODY ////////////////////////////////////////////////
+        .exp-content-wrapper {
+          display: flex;
+          flex-direction: column;
+          gap: 24px;
+
+          margin-left: 44px;
+
+          color: $klein-blue;
+
+          .exp-title {
+            font-size: 16px;
+            font-weight: 500;
+          }
+          .exp-content {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+
+            .exp-content-header {
+              display: flex;
+              align-items: center;
+
+              gap: 12px;
+
+              .position-name {
+                font-size: 18px;
+                font-weight: 600;
+              }
+            }
+
+            .position-desc {
+              font-size: 16px;
+              font-weight: 500;
+              line-height: 130%;
+
+              margin-left: 32px;
+
+              color: $dark-blue;
+
+              @media screen and (max-width: 768px) {
+                font-size: 15px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .skill-container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 30px;
+
+    @media screen and (max-width: 768px) {
+      gap: 20px;
+    }
+
+    .skill-content {
+      display: flex;
+      align-items: center;
+
+      gap: 12px;
+
+      padding: 0 16px 0 0;
+
+      color: $klein-blue;
+      background-color: $fluorescent-white;
+
+      font-weight: 600;
+
+      @media screen and (max-width: 768px) {
+        font-size: 13px;
+      }
+
+      .skill-icon {
+        width: auto;
+        height: 38px;
+
+        @media screen and (max-width: 768px) {
+          height: 32px;
+        }
+      }
+    }
+  }
+
+  .education-grid {
+    display: flex;
+    justify-content: space-between;
+
+    gap: 80px;
+
+    color: $klein-blue;
+
+    @media screen and (max-width: 768px) {
+      flex-direction: column;
+      gap: 60px;
+    }
+
+    .education-wrapper {
+      display: flex;
+      flex-direction: column;
+
+      gap: 24px;
+
+      width: 100%;
+
+      .education-header {
+        display: flex;
+
+        gap: 16px;
+
+        .education-header-wrapper {
+          display: flex;
+          flex-direction: column;
+          gap: 8px;
+
+          .education-date {
+            font-size: 15px;
+            font-weight: 500;
+          }
+
+          .education-name {
+            font-size: 20px;
+            font-weight: 700;
+          }
+        }
+      }
+
+      .education-content {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+
+        margin-left: 46px;
+
+        font-weight: 600;
+
+        @media screen and (max-width: 768px) {
+          font-size: 15px;
+        }
+      }
+    }
+
+    .language-wrapper {
+      width: 100%;
+
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+
+      gap: 24px;
+
+      .language-title {
+        font-size: 20px;
+        font-weight: 700;
+      }
+
+      .language-container {
+        display: flex;
+        align-items: center;
+
+        .language-wrapper {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+
+          gap: 16px;
+
+          width: 100%;
+          min-width: 200px;
+
+          p {
+            font-weight: 500;
+          }
+        }
+
+        .language-level {
+          font-style: italic;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+}
+
+.exp-content-icon {
+  width: 20px;
+  height: auto;
+
+  color: $light-blue;
+}
+
+.nine-dots-icon {
+  width: 30px;
+  height: auto;
+
+  color: $klein-blue;
+}
