@@ -8,9 +8,11 @@ import ValentinePreview from "../../../assets/pngs/valentine-preview.png";
 import ValentineContent from "../../../assets/pngs/valentine-content.png";
 import ValentineDeskContent from "../../../assets/pngs/valentine-desk-content.png";
 import UxCaseStudyPreview from "../../../assets/pngs/uxcasestudy-preview.png";
-import UxCaseStudyDeskContent from "../../../assets/pngs/ux-case-study.png";
+import UxCaseStudyDeskContent from "../../../assets/pngs/uxcase-study-desk-content.png";
+import UxCaseStudyContent from "../../../assets/pngs/uxcase-study-content.png";
 import UiPreview from "../../../assets/pngs/ui-preview.png";
-import UiDeskContent from "../../../assets/pngs/ui-content.png";
+import UiDeskContent from "../../../assets/pngs/ui-desk-content.png";
+import UiContent from "../../../assets/pngs/ui-content.png";
 import ShirtPreview from "../../../assets/pngs/shirt-preview.png";
 import ShirtContent from "../../../assets/pngs/shirt-content.png";
 import ShirtDeskContent from "../../../assets/pngs/shirt-desk-content.png";
@@ -56,7 +58,7 @@ const ProjectList = () => {
         width > 768 ? (
           <img src={UxCaseStudyDeskContent} className="content-img" />
         ) : (
-          <img src={UxCaseStudyDeskContent} className="content-img" />
+          <img src={UxCaseStudyContent} className="content-img" />
         ),
     },
     {
@@ -66,9 +68,9 @@ const ProjectList = () => {
       desc: "UI screens that I designed with some help from a colleague for a single project, selected from many interfaces I created from scratch.",
       content:
         width > 768 ? (
-          <img src={ShirtDeskContent} className="content-img" />
+          <img src={UiDeskContent} className="content-img" />
         ) : (
-          <img src={ShirtContent} className="content-img" />
+          <img src={UiContent} className="content-img" />
         ),
     },
     {
