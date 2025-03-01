@@ -48,6 +48,7 @@
   display: flex;
   flex-grow: 1;
   overflow-y: visible; /* ✅ Remove unnecessary scroll inside */
+  min-height: 700px;
 }
 
 /* ✅ Close button stays in place */
@@ -100,13 +101,13 @@
 
   width: 90%;
   max-width: 1200px;
-  min-height: 600px;
 
-  background: white;
   overflow: hidden;
 
   display: flex;
   flex-direction: column;
+
+  background: white;
   outline: 1px solid #002cb225;
 
   /* ✅ Ensures it stays centered when content is small */
@@ -123,6 +124,7 @@
 .desktop-modal-content {
   flex-grow: 1;
   overflow-y: visible; /* ✅ Remove unnecessary scroll inside */
+  min-height: 700px;
 }
 
 /* ✅ Close button stays in place */

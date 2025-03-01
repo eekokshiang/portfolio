@@ -54,7 +54,7 @@ const Modal = ({ isOpen, onClose, project }) => {
       {width > 768 ? (
         <div className="desktop-modal-overlay" onClick={onClose}>
           {isLoading ? (
-            <div className="desktop-loader">/// Loading...</div>
+            <div className="loader">/// Loading...</div>
           ) : (
             <div
               className="desktop-modal-container"
