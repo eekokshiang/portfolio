@@ -6,24 +6,32 @@ import useWindowSize from "../../hooks/useWindowResize";
 
 const Modal = ({ isOpen, onClose, project }) => {
   const { width } = useWindowSize();
-  const [scrollY, setScrollY] = useState(0); // ✅ Store the scroll position
+  const [scrollY, setScrollY] = useState(0);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     if (isOpen) {
-      setScrollY(window.scrollY); // ✅ Save the exact scroll position
+      setScrollY(window.scrollY);
       document.body.style.position = "fixed";
       document.body.style.top = `-${window.scrollY}px`;
       document.body.style.width = "100%";
-      document.body.style.overflow = "hidden"; // ✅ Prevent background scroll
+      document.body.style.overflow = "hidden";
+
+      // Simulate loading delay
+      const timer = setTimeout(() => {
+        setIsLoading(false);
+      }, 500); // Adjust delay as needed
+
+      return () => clearTimeout(timer);
     } else {
       document.body.style.position = "";
       document.body.style.top = "";
       document.body.style.overflow = "auto";
 
-      // ✅ Instantly restore scroll position without animation
       window.requestAnimationFrame(() => {
         window.scrollTo({ top: scrollY, behavior: "instant" });
       });
+      setIsLoading(true); // Reset loading state when closing modal
     }
 
     return () => {
@@ -32,7 +40,6 @@ const Modal = ({ isOpen, onClose, project }) => {
         document.body.style.top = "";
         document.body.style.overflow = "auto";
 
-        // ✅ Ensures position is restored instantly
         window.requestAnimationFrame(() => {
           window.scrollTo({ top: scrollY, behavior: "instant" });
         });
@@ -46,24 +53,35 @@ const Modal = ({ isOpen, onClose, project }) => {
     <>
       {width > 768 ? (
         <div className="desktop-modal-overlay" onClick={onClose}>
-          <div
-            className="desktop-modal-container"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <button className="desktop-close-button" onClick={onClose}>
-              <CrossIcon />
-            </button>
-            <div className="desktop-modal-content">{project.content}</div>
-          </div>
+          {isLoading ? (
+            <div className="desktop-loader">/// Loading...</div>
+          ) : (
+            <div
+              className="desktop-modal-container"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <button className="desktop-close-button" onClick={onClose}>
+                <CrossIcon />
+              </button>
+              <div className="desktop-modal-content">{project.content}</div>
+            </div>
+          )}
         </div>
       ) : (
         <div className="modal-overlay" onClick={onClose}>
-          <div className="modal-container" onClick={(e) => e.stopPropagation()}>
-            <button className="close-button" onClick={onClose}>
-              <CrossIcon />
-            </button>
-            <div className="modal-content">{project.content}</div>
-          </div>
+          {isLoading ? (
+            <div className="loader">/// Loading...</div>
+          ) : (
+            <div
+              className="modal-container"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <button className="close-button" onClick={onClose}>
+                <CrossIcon />
+              </button>
+              <div className="modal-content">{project.content}</div>
+            </div>
+          )}
         </div>
       )}
     </>
