@@ -89,6 +89,46 @@
     }
   }
 
+  .more-about-info {
+    margin-top: 30px;
+
+    @media screen and (max-width: 768px) {
+      margin-top: 20px;
+    }
+
+    .info-list {
+      list-style: none; // Removes default bullets
+      padding: 0;
+      margin: 0;
+
+      li {
+        position: relative;
+
+        padding-left: 20px; // Space for custom bullet
+        margin-bottom: 10px; // Adds spacing between items
+
+        font-size: 17px;
+        font-weight: 500;
+        line-height: 1.5;
+        color: $klein-blue; // Adjust text color
+
+        @media screen and (max-width: 768px) {
+          line-height: 120%;
+          font-size: 16px;
+        }
+
+        &::before {
+          content: "•"; // Custom bullet
+          position: absolute;
+          left: 0;
+          top: 0;
+          color: $klein-blue; // Adjust bullet color
+          font-size: 18px;
+        }
+      }
+    }
+  }
+
   .about-title {
     display: inline-block;
     width: 100%;
@@ -100,11 +140,11 @@
     border-bottom: $light-blue solid 1px;
 
     padding-bottom: 20px;
-    margin-top: 80px;
+    margin-top: 60px;
     margin-bottom: 30px;
 
     @media screen and (max-width: 768px) {
-      margin-top: 60px;
+      margin-top: 50px;
       font-size: 26px;
     }
   }

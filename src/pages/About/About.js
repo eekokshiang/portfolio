@@ -21,6 +21,9 @@ import CryptoIcon from "../../assets/svgs/bitcoin-icon.svg";
 import ChatgptIcon from "../../assets/svgs/chatgpt-icon.svg";
 import ShirtDesignIcon from "../../assets/svgs/shirt-icon.svg";
 import CharcDesignIcon from "../../assets/svgs/character-icon.svg";
+import TradingIcon from "../../assets/svgs/trading-icon.svg";
+import DeFiIcon from "../../assets/svgs/defi-icon.svg";
+import DexCexIcon from "../../assets/svgs/dexcex-icon.svg";
 
 const About = () => {
   const experienceContent = [
@@ -112,10 +115,7 @@ const About = () => {
       icon: <img src={PrototypeIcon} className="skill-icon" />,
       skillName: "Prototyping",
     },
-    {
-      icon: <img src={CryptoIcon} className="skill-icon" />,
-      skillName: "Crypto",
-    },
+
     {
       icon: <img src={ChatgptIcon} className="skill-icon" />,
       skillName: "ChatGPT",
@@ -127,6 +127,22 @@ const About = () => {
     {
       icon: <img src={CharcDesignIcon} className="skill-icon" />,
       skillName: "Character Design",
+    },
+    {
+      icon: <img src={CryptoIcon} className="skill-icon" />,
+      skillName: "Crypto",
+    },
+    {
+      icon: <img src={TradingIcon} className="skill-icon" />,
+      skillName: "Trading",
+    },
+    {
+      icon: <img src={DeFiIcon} className="skill-icon" />,
+      skillName: "DeFi",
+    },
+    {
+      icon: <img src={DexCexIcon} className="skill-icon" />,
+      skillName: "DEX/CEX",
     },
   ];
 
@@ -162,6 +178,25 @@ const About = () => {
             these fields, broadening my expertise beyond design."
           </p>
         </div>
+      </div>
+
+      <div className="more-about-info">
+        <ul className="info-list">
+          <li className="info-text">Been in the crypto space for four years</li>
+          <li className="info-text">
+            Actively trading, including swaps, staking, yield farming, and DeFi
+          </li>
+          <li className="info-text">
+            Designed a complex UI/UX for a crypto social application
+          </li>
+          <li className="info-text">
+            Built a website for a Malaysia SC-regulated payment app
+          </li>
+          <li className="info-text">
+            Capable of designing and building front-end interfaces from start to
+            finish
+          </li>
+        </ul>
       </div>
 
       <p className="about-title">// EXPERIENCES</p>
@@ -225,7 +260,7 @@ const About = () => {
         </div>
       </div>
 
-      <p className="about-title">// SKILLS</p>
+      <p className="about-title">// SKILLS & KNOWLEDGES</p>
 
       <div className="skill-container">
         {skills.map((skill, index) => (
