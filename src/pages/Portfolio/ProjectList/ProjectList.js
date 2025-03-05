@@ -37,12 +37,20 @@ import AkaiMpDeskContent from "../../../assets/pngs/akai-mp-desk-content.png";
 import GoalPreview from "../../../assets/pngs/goal-preview.png";
 import GoalContent from "../../../assets/pngs/goal-content.png";
 import GoalDeskContent from "../../../assets/pngs/goal-desk-content.png";
+import ScAppPreview from "../../../assets/pngs/scapp-preview.png";
 
 // ✅ Move useWindowSize() inside a function to avoid breaking React Hook Rules
 const ProjectList = () => {
   const { width } = useWindowSize(); // ✅ Hook is inside the function
 
   const projects = [
+    {
+      image: ScAppPreview,
+      date: "1 March 2025",
+      title: "SC Regulated App's Website",
+      desc: "Upcoming",
+      content: "",
+    },
     {
       image: ValentinePreview,
       date: "12 Feb 2025",

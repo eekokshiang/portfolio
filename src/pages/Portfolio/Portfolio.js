@@ -19,7 +19,14 @@ const Portfolio = () => {
           title={projectList.title}
           desc={projectList.desc}
           image={projectList.image}
-          onClick={() => setSelectedProject(projectList)}
+          onClick={
+            index === 0 ? undefined : () => setSelectedProject(projectList)
+          }
+          className={
+            index === 0
+              ? "panel-main-container disabled"
+              : "panel-main-container"
+          }
         />
       ))}
 

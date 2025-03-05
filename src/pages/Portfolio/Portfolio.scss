@@ -1,3 +1,5 @@
+@import "../../assets/styles/variable.scss";
+
 .portfolio-main-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -6,5 +8,11 @@
 
   @media screen and (max-width: 768px) {
     gap: 8px;
+  }
+
+  .disabled {
+    pointer-events: none; // Prevent clicking
+    opacity: 0.5; // Make it visually distinct
+    cursor: default; // Remove hover pointer
   }
 }
